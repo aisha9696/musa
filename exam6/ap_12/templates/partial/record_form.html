@@ -1,0 +1,28 @@
+{% csrf_token %}
+
+{% for error in form.non_field_errors %}
+    <p class="text-danger">{{ error }}</p>
+{% endfor %}
+
+
+<label>Author:</label><br>
+<input type="text" class="form-control" name="author" value="{{ record.author }}">
+{% for error in form.author.errors %}
+    <p class="text-danger">{{ error }}</p>
+{% endfor %}
+<br>
+
+<label>Text:</label><br>
+<textarea class="form-control" name="text">{{ record.text }}</textarea><br>
+{% for error in form.text.errors %}
+    <p class="text-danger">{{ error }}</p>
+{% endfor %}
+
+<label>Email:</label><br>
+<input type="text" class="form-control" name="email" value="{{ record.email }}">
+{% for error in form.email.errors %}
+    <p class="text-danger">{{ error }}</p>
+{% endfor %}
+<br>
+
+<input type="submit" value="{{ btn_text|default:'Send' }}" class="btn btn-primary">

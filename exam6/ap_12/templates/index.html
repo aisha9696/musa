@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+{% for part in record %}
+<div class="block">
+    <div class="row">
+        <div class="col-md-10">
+            <h4>{{ part.author }} ({{ part.email }})</h4>
+        </div>
+        <div class="col-md-2">
+            <div class="row">
+                <div class="col-md-3">
+                    <a href="{% url 'record_update' id=part.id %}"><i class="fa-solid fa-pen-to-square"></i></a>
+                </div>
+                <div class="col-md-3">
+                    <form action="{% url 'record_delete' id=part.id %}"
+                          method="post" onsubmit="return confirm('Delete?')">
+                        {% csrf_token %}
+                        <button><i class="fa-solid fa-trash"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <p>{{ part.text }}</p>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="text-center">
+    <h1>Author</h1>
+
+    <h2>Name: {{ author.name }}</h2>
+    <p>Date of life: {{ author.date_of_life }}</p>
+    <p>Biography: {{ author.biography }}</p>
+    <a href="{% url 'book_add2' author_id=author.id %}">Добавить книгу</a>
+    <hr>
+    <h1>Books</h1>
+    <hr>
+    {% for part in books %}
+    <h2>{{ part.name }}</h2>
+    <a href="{% url 'book_detail' id=part.id %}">Подробнее..</a>
+    <hr>
+    {% empty %}
+
+        <h5>No books yet.</h5>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,72 @@
+[
+{
+  "model": "webapp.product",
+  "pk": 1,
+  "fields": {
+    "name": "Ryzen 5700x",
+    "category": "Components",
+    "description": "їюЁю°хх юяшёрэшх",
+    "picture": "pictures/166990_1.jpg"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 2,
+  "fields": {
+    "name": "Macbook Pro M1",
+    "category": "Laptops",
+    "description": "",
+    "picture": ""
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 3,
+  "fields": {
+    "name": "Redmi Note 12",
+    "category": "Smartphones",
+    "description": "",
+    "picture": ""
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 4,
+  "fields": {
+    "name": "Apple AirMax",
+    "category": "Periphery",
+    "description": "",
+    "picture": ""
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 2,
+  "fields": {
+    "author": 2,
+    "product": 1,
+    "text": "тЇ√тЇ√т√",
+    "grade": 4
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 3,
+  "fields": {
+    "author": 2,
+    "product": 1,
+    "text": "dasdasddas",
+    "grade": 5
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 4,
+  "fields": {
+    "author": 2,
+    "product": 1,
+    "text": "dasdasdasd",
+    "grade": 5
+  }
+}
+]

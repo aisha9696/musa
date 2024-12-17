@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="text-center">
+
+    <h2>Продукт: {{ review.product }}</h2>
+    <p>Пользователь: {{ review.author }}</p>
+    <p>Почта: {{ review.author.email }}</p>
+    <p>Отзыв: {{ review.text }}</p>
+    <p>Оценка: {{ review.grade }}</p>
+    {% if perms.webapp.change_review or request.user == review.author %}
+    <a href="{% url 'review_update' review_id=review.id %}" class="btn btn-primary">
+        Update
+    </a>
+    {% endif %}
+    <br><br>
+    {% if perms.webapp.delete_review or request.user == review.author %}
+    <form action="{% url 'review_delete' review_id=review.id %}" method="post" onsubmit="return confirm('Delete?')">
+        {% csrf_token %}
+        <button class="btn btn-danger">Delete</button>
+    </form>
+    {% endif %}
+</div>
+{% endblock %}

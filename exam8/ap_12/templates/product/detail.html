@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="text-center">
+    {% if product.picture %}
+    <img src="{{ product.picture.url }}" width="250" height="250" class="object-fit-cover" alt="picture">
+    {% else %}
+    <img src="{% static 'Placeholder-1.png' %}" width="250" height="250" class="object-fit-cover" alt="picture">
+    {% endif %}
+    <h2>Name: {{ product.name }}</h2>
+    <p>Category: {{ product.category }}</p>
+    <p>Description: {{ product.description }}</p>
+    <p>Average grade: {% if average_grade %} {{ average_grade }} {% else %} 0 {% endif %}</p>
+    {% if perms.webapp.change_product %}
+    <a href="{% url 'product_update' product_id=product.id %}" class="btn btn-primary">
+        Update
+    </a>
+    {% endif %}
+    <br><br>
+    {% if perms.webapp.delete_product %}
+    <form action="{% url 'product_delete' product_id=product.id %}" method="post" onsubmit="return confirm('Delete?')">
+        {% csrf_token %}
+        <button class="btn btn-danger">Delete</button>
+    </form>
+    {% endif %}
+    <hr>
+    <h3 class="mb-4">Reviews</h3>
+    {% url 'review_add' product_id=product.id as tasks_action_url %}
+    {% include 'partial/form.html' with form=review_form request_method='POST' action_url=tasks_action_url %}
+    <hr>
+    {% for part in reviews %}
+    <a href="{% url 'profile' id=part.author.id %}">{{ part.author.first_name }}</a><br><br>
+    <p>Почта: {{ part.author.email }}</p>
+    <p>Отзыв: {{ part.text }}</p>
+    <p>Оценка: {{ part.grade }}</p>
+    <a href="{% url 'review_detail' id=part.id %}">Подробнее</a><br><br>
+
+    <hr>
+    {% empty %}
+
+        <h5>No tasks yet.</h5>
+    {% endfor %}
+</div>
+{% endblock %}

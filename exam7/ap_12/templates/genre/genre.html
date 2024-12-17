@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="text-center">
+<h1>Genres</h1>
+<p><a href="{% url 'genre_add' %}">Добавить</a></p>
+{% for part in genre %}
+    <h2>{{ part.name }}</h2>
+    <p><a href="{% url 'genre_detail' id=part.id %}">Книги</a></p>
+    <form action="{% url 'genre_delete' genre_id=part.id %}" method="post">
+    {% csrf_token %}
+        <button class="btn btn-danger">Delete</button>
+    </form>
+    <hr>
+{% endfor %}
+</div>
+{% if is_paginated %}
+    {% include 'partial/pagination.html' %}
+{% endif %}
+{% endblock %}

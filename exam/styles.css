@@ -1,0 +1,240 @@
+* {
+    font-family: 'Raleway', sans-serif !important;
+}
+
+.green {
+    background-color: #5bbc2e !important;
+}
+
+.menu {
+    font-size: 13px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600 !important;
+    margin: 0 15px;
+}
+
+.login {
+    width: 120px;
+    height: 37px;
+    padding-top: 7px;
+    background: #489c22;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    text-align: center;
+    border-radius: 3px;
+    font-weight: 600;
+}
+
+.carousel-indicators {
+    margin-bottom: 35px;
+}
+
+.custom {
+    width: 14px !important;
+    height: 14px !important;
+    border-radius: 50% !important;
+    border: 4px #5bbc2e solid !important;
+}
+
+.active {
+    background: #5bbc2e !important;
+}
+
+.h1-margin-bottom {
+    margin-bottom: 90px;
+}
+
+.h1 {
+    font-size: 48px;
+    text-transform: uppercase;
+    color: black;
+    font-weight: 800;
+}
+
+.color-green {
+    color: #5bbc2e;
+}
+
+.first-block {
+    text-align: center;
+    background: #f5f5f5;
+    padding-bottom: 90px;
+}
+
+.h1-padding-top {
+    padding-top: 90px;
+}
+
+.small-text {
+    width: 60%;
+    margin: 15px auto 0 auto;
+}
+
+.small-text-bottom {
+    padding-bottom: 50px;
+}
+
+h6 {
+    text-transform: uppercase;
+    margin: 20px auto;
+}
+
+.size {
+    margin: 0 auto;
+    width: 50px;
+    height: 50px;
+}
+
+.small-text, .second-small-text {
+    font-size: 12px;
+    line-height: 25px;
+    font-weight: 400;
+    color: #515151;
+}
+
+.second-small-text {
+    padding-bottom: 30px;
+}
+
+.second-block {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+h3 {
+    font-size: 30px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #8d8d8d;
+}
+
+.text-box {
+    padding-left: 90px;
+    padding-top: 70px;
+}
+
+.third-small-text {
+    color: #8d8d8d;
+    padding-top: 25px;
+    font-size: 14px;
+}
+
+.third-block {
+    background: #f5f5f5;
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+ul {
+    list-style-image: url("./img/arrow.png");
+}
+
+.last-block {
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+.align {
+    text-align: center;
+}
+
+.card-margin {
+    margin: 20px auto;
+    text-align: center;
+    width: 265px;
+    padding: 0 !important;
+}
+
+.card-padding {
+    padding-bottom: 10px;
+}
+
+.margin-h3 {
+    margin-bottom: 60px;
+}
+
+.blue {
+    background: #2ca7e0;
+    border: 1px #2ca7e0 solid;
+}
+
+.green {
+    background: #5bbc2e;
+    border: 1px #5bbc2e solid;
+}
+
+.purple {
+    background: #c42fc9;
+    border: 1px #c42fc9;
+}
+
+.orange {
+    background: #dac10f;
+    border: 1px #dac10f;
+}
+
+.edit {
+    border-radius: 0px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 20px;
+}
+
+.card-text, .edit {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 12px;
+}
+
+.card-text {
+    color: #4b4b4b;
+}
+
+.btn:hover {
+    background-color: red !important;
+    border-color: red !important;
+}
+
+footer {
+    background-color: #141414;
+    height: 100px;
+}
+
+.footer-text {
+    font-size: 12px;
+    color: #e0e0e0;
+    font-weight: 600;
+    padding-top: 40px;
+}
+
+.size {
+    width: 100%;
+    height: 40px;
+}
+.modal-title {
+    margin-left: 100px;
+    color: gray;
+    text-transform: uppercase;
+}
+
+.modal-body {
+    margin: 0 auto;
+}
+
+@media (max-width: 1199px) { 
+    h1 {
+        font-size: 30px !important;
+    }
+    h3 {
+        font-size: 20px !important;
+    }
+    .h1-margin-bottom {
+        margin-bottom: 20px;
+    }
+    .text-box {
+        padding-left: 0;
+        padding-top: 0;
+    }
+}

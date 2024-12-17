@@ -1,0 +1,43 @@
+{% csrf_token %}
+
+{% for error in form.non_field_errors %}
+    <p class="text-danger">{{ error }}</p>
+{% endfor %}
+
+
+<label>Name:</label><br>
+<input type="text" class="form-control" name="name" value="{{ book.name }}">
+{% for error in form.name.errors %}
+    <p class="text-danger">{{ error }}</p>
+{% endfor %}
+<br>
+
+<label>Year of publishing:</label><br>
+<input type="text" class="form-control" name="year_of_publishing" value="{{ book.year_of_publishing }}">
+{% for error in form.year_of_publishing.errors %}
+    <p class="text-danger">{{ error }}</p>
+{% endfor %}
+<br>
+
+<label>Author:</label><br>
+{{ form.author }}<br>
+{% for error in form.author.errors %}
+    <p class="text-danger">{{ error }}</p>
+{% endfor %}
+<br>
+
+<label>Year of publishing:</label><br>
+<textarea class="form-control" name="description">{{ book.description }}</textarea><br>
+{% for error in form.description.errors %}
+    <p class="text-danger">{{ error }}</p>
+{% endfor %}
+
+<label>Genre:</label><br>
+{{ form.genre }}<br>
+{% for error in form.genre.errors %}
+    <p class="text-danger">{{ error }}</p>
+{% endfor %}
+<br>
+
+
+<input type="submit" value="{{ btn_text|default:'Send' }}" class="btn btn-primary">

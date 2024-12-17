@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Личная страница пользователя {{ user_obj.get_full_name }}</h1>
+
+{% if user_obj.profile.avatar %}
+    <img src="{{ user_obj.profile.avatar.url }}" width="250" height="250" class="object-fit-cover" alt="user_avatar">
+{% endif %}
+
+<p>Имя пользователя: {{ user_obj.username }}</p>
+<p>Имя: {{ user_obj.first_name }}</p>
+<p>Фамилия: {{ user_obj.last_name }}</p>
+<p>Почта: {{ user_obj.email }}</p>
+<p>О себе: {{ user_obj.profile.about_me }}</p>
+{% if request.user == user_obj %}
+<a href="{% url 'user_update'%}" class="btn btn-warning mt-3">Обновить</a>
+<a href="{% url 'change_password' %}" class="btn btn-primary mt-3">Сменить пароль</a>
+{% endif %}
+<h2 class="text-center">Отзывы</h2>
+{% include 'partial/reviews_list.html' with reviews=page_obj.object_list is_paginated=page_obj.has_other_pages %}
+
+{% endblock %}

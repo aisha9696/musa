@@ -1,0 +1,14 @@
+{% for review in reviews %}
+    <h2>Продукт: {{ review.product }}</h2>
+    <p>Пользователь: {{ review.author.first_name }}</p>
+    <p>Почта: {{ review.author.email }}</p>
+    <p>Отзыв: {{ review.text }}</p>
+    <p>Оценка: {{ review.grade }}</p>
+    <hr>
+{% empty %}
+    <h2>no reviews yet ...</h2>
+{% endfor %}
+
+{% if is_paginated %}
+    {% include 'partial/pagination.html' %}
+{% endif %}

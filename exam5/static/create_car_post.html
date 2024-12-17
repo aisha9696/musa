@@ -1,0 +1,55 @@
+<form action="/" method="POST">
+  <h1>Place new advertisement</h1>
+  <table>
+    <tbody>
+      <tr>
+        <td>Make</td>
+        <td>
+          <select name="make">
+            <option value="Mercedes Benz">Mercedes Benz</option>
+            <option value="Toyota">Toyota</option>
+            <option value="BMW">BMW</option>
+            <option value="Subaru">Subaru</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Year</td>
+        <td>
+          <input type="number" name="year" required>
+        </td>
+      </tr>
+      <tr>
+        <td>Price</td>
+        <td>
+          <input type="number" name="price" required>
+        </td>
+      </tr>
+      <tr>
+        <td>Image</td>
+        <td>
+          <input type="text" name="image" required>
+        </td>
+      </tr>
+      <tr>
+        <td>Description</td>
+        <td>
+          <textarea name="description" required></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td>Contacts</td>
+        <td>
+          <textarea name="contacts" required></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="6">
+          <input type="submit" value="Create">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <a href="/">Return to home page</a>
+</form>

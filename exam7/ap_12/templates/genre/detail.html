@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="text-center">
+    <h1>Genre</h1>
+
+    <h2>Name: {{ genre.name }}</h2>
+    <hr>
+    {% for part in books %}
+    <h2>{{ part.name }}</h2>
+    <a href="{% url 'book_detail' id=part.id %}">Подробнее..</a>
+    <hr>
+    {% empty %}
+
+        <h5>No books yet.</h5>
+    {% endfor %}
+</div>
+{% endblock %}

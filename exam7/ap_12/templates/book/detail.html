@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="text-center">
+    <h1>Book</h1>
+
+    <h2>Name: {{ book.name }}</h2>
+    <p>Description: {{ book.description }}</p>
+    <p>Author: {{ book.author }}</p>
+    <p>Year of publishing: {{ book.year_of_publishing }}</p>
+    <p>Genres:
+        {% for genre in book.genre.all %}
+        {{ genre.name }}
+        {% endfor %}
+    </p>
+
+    <a href="{% url 'book_update' id=book.id %}" class="btn btn-primary">
+        Update
+    </a><br><br>
+
+    <form action="{% url 'book_delete' id=book.id %}" method="post" onsubmit="return confirm('Delete?')">
+        {% csrf_token %}
+        <button class="btn btn-danger">Delete</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="text-center">Registration</h1>
+
+{% include 'partial/form.html' with request_method='post' btn_text='Register' %}
+
+{% endblock %}
